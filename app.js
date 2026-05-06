@@ -91,6 +91,8 @@ app.use("/",userRouter);
 //     await sampleListing.save();
 //     res.send("successfull testing");
 // });
+const bookingRoutes = require("./routes/booking");
+app.use("/booking", bookingRoutes);
 
 //route for all error message
 app.get("/", (req, res) => {

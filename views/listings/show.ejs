@@ -22,6 +22,26 @@
             <%= listing.location %><br>
             <%= listing.country %><br>
             </p>
+
+            <hr>
+
+            <h2>Book This Place</h2>
+
+            <form action="/booking/create" method="POST">
+    
+                <input type="hidden" name="listingId" value="<%= listing._id %>">
+
+                <label>Check In:</label><br>
+                <input type="date" name="checkIn" required><br><br>
+
+                <label>Check Out:</label><br>
+                <input type="date" name="checkOut" required><br><br>
+
+                <button type="submit">Book Now</button>
+            </form>
+
+            <hr>
+
         </div>
     </div>
 </div>
@@ -32,6 +52,7 @@
             <button class="btn btn-dark offset-5">DELETE</button>
         </form>
     </div>
+    
     <div class="col-8 offset-3">
         <hr>
         <% if(currUser) {%>
